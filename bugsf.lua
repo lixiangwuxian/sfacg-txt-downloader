@@ -1,5 +1,6 @@
 function init()
-	page1 = "https://m.sfacg.com/c/[first chapter]/"
+	page1 = "https://m.sfacg.com/c/[first chapter]/" 
+        --输入手机版第一章页面地址
 	link = page1
 end
 
