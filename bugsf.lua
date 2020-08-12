@@ -38,4 +38,4 @@ while links ~= nil do
 	io.write(maintxt.."\n")
 end
 io.close()
-print("Done")
+print("下载完成")
