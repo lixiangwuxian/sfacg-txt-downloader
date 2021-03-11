@@ -1,7 +1,6 @@
 function init()
-	page1 = "https://m.sfacg.com/c/[first chapter]/" 
+	link = "https://m.sfacg.com/c/3343280/" 
         --输入手机版第一章页面地址
-	link = page1
 end
 
 function getpage()
@@ -15,14 +14,17 @@ function main()
 	text = io.read("*a")
 	i,txts=string.find(text,"返回<")
 	txte=string.find(text,">上一章")
+	if(txte==nil) then
+		
+	end
 	links,linke=string.find(text,"/c/[0-9]+\">下一章")
 	if linke then
 		linke=linke-11
 		link="https://m.sfacg.com"..string.sub(text,links,linke)
 	end
 	maintxt=string.sub(text,txts+13,txte)
-	maintxt=string.gsub(maintxt,"<p>","\n")
-	maintxt=string.gsub(maintxt,"</p>","")
+	maintxt=string.gsub(maintxt,"<p>","")
+	maintxt=string.gsub(maintxt,"</p>","\r\n")
 	maintxt=string.gsub(maintxt,"<br>","")
 	maintxt=string.gsub(maintxt,"</div>","")
 	maintxt=string.gsub(maintxt,"</li><li></li></ul>","")
@@ -32,7 +34,7 @@ end
 
 init()
 links=0
-io.output(".txt")
+io.output("114.txt")
 while links ~= nil do
 	main()
 	io.write(maintxt.."\n")
