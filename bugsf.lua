@@ -24,12 +24,12 @@ function main()
 	end
 	maintxt=string.sub(text,txts+13,txte)
 	maintxt=string.gsub(maintxt,"<p>","")
-	maintxt=string.gsub(maintxt,"</p>","\r\n")
+	maintxt=string.gsub(maintxt,"</p>","\n")
 	maintxt=string.gsub(maintxt,"<br>","")
 	maintxt=string.gsub(maintxt,"</div>","")
 	maintxt=string.gsub(maintxt,"</li><li></li></ul>","")
-	maintxt=string.gsub(maintxt,"<div class=\"yuedu_menu\"><a href=\"/c/[0-9]+\">","")
-	maintxt=string.gsub(maintxt,"<div .+\">","")
+	maintxt=string.gsub(maintxt,"<div class=\"yuedu_menu\"><a href=\"/[c,i]/[0-9]+\">","")
+	maintxt=string.gsub(maintxt,"<div style=\"text-indent: 2em;\">","")
 end
 
 init()
